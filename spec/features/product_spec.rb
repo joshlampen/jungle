@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   describe 'Validations' do
-    it 'saves when name, price, quantity, and category fields are set' do
+    it 'saves when name, price, quantity, and category fields are set correctly' do
       @category = Category.new(
         id: 1,
       )
