@@ -94,47 +94,47 @@ RSpec.describe User, type: :model do
     end
 
     it 'does not save if email is already in the database (case insensitive)' do
-      @user_1 = User.new(
+      @user1 = User.new(
         first_name: 'Josh',
         last_name: 'Lampen',
         email: 'joshlampen@gmail.com',
         password: '12345678',
         password_confirmation: '12345678'
       )
-      @user_1.save!
+      @user1.save!
 
-      @user_2 = User.new(
+      @user2 = User.new(
         first_name: 'J',
         last_name: 'L',
         email: 'jOsHlAmPeN@gMaIl.CoM',
         password: '87654321',
         password_confirmation: '87654321'
       )
-      @user_2.save
+      @user2.save
 
-      expect(@user_2.errors.full_messages).to include("Email already exists in database")
+      expect(@user2.errors.full_messages).to include("Email already exists in database")
     end
 
     it 'does not save if email is already in the database (accounts for leading and trailing whitespace)' do
-      @user_1 = User.new(
+      @user1 = User.new(
         first_name: 'Josh',
         last_name: 'Lampen',
         email: 'joshlampen@gmail.com',
         password: '12345678',
         password_confirmation: '12345678'
       )
-      @user_1.save!
+      @user1.save!
 
-      @user_2 = User.new(
+      @user2 = User.new(
         first_name: 'J',
         last_name: 'L',
         email: ' joshlampen@gmail.com ',
         password: '87654321',
         password_confirmation: '87654321'
       )
-      @user_2.save
+      @user2.save
 
-      expect(@user_2.errors.full_messages).to include("Email already exists in database")
+      expect(@user2.errors.full_messages).to include("Email already exists in database")
     end
 
     it 'does not save if password is less than 8 characters long' do
