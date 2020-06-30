@@ -11,12 +11,15 @@ class User < ActiveRecord::Base
   validate :check_email
   validates_length_of :password, :minimum => 8
 
-  before_save :downcase_email
+  before_validation :format_email
 
   private
   
-  def downcase_email
-    self.email.downcase!
+  def format_email
+    if self.email
+      self.email.strip!
+      self.email.downcase!
+    end
   end
   
   def check_email
