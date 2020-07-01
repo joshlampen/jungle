@@ -2,6 +2,10 @@
 
 Jungle is a mini e-commerce application built with Rails. For this project I took on an existing codebase and integrated new features and test suites.
 
+- Front End: ERB, Sass
+- Back End: Ruby on Rails
+- Test: RSpec
+
 ## Getting Started
 
 1. Run `bundle install` to install dependencies
