@@ -53,6 +53,9 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # For order receipt previews (sends to Letter Opener instead of the actual email)
+  gem 'letter_opener_web'
 end
 
 group :production do

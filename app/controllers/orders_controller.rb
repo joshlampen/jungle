@@ -9,8 +9,11 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
 
     if order.valid?
+      OrderMailer.email_receipt(order).deliver_later
+      # see preview at http://localhost:3000/letter_opener
+      
       empty_cart!
-      redirect_to order, notice: 'Your Order has been placed.'
+      redirect_to order
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
     end
