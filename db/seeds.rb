@@ -132,5 +132,38 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+User.create!(
+  first_name: 'Josh',
+  last_name: 'Lampen',
+  email: 'joshlampen2@gmail.com',
+  password: '12345678',
+  password_confirmation: '12345678'
+)
+
+Review.create!(
+  rating: 2,
+  description: "Cool design, but it really can't hold that many books.",
+  product_id: 12,
+  user_id: 1
+)
+
+Review.create!(
+  rating: 3,
+  product_id: 12,
+  user_id: 1
+)
+
+Review.create!(
+  rating: 4,
+  product_id: 11,
+  user_id: 1
+)
+
+Review.create!(
+  rating: 5,
+  description: "By far the best sleeps I have ever had in my entire life.",
+  product_id: 10,
+  user_id: 1
+)
 
 puts "DONE!"
