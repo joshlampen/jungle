@@ -1,6 +1,6 @@
 # Jungle
 
-Jungle is a mini e-commerce application built with Rails. For this project I took on an existing codebase and integrated new features and test suites.
+Jungle is a mini e-commerce application built with Ruby on Rails. For this project I took on an existing codebase and integrated new features and test suites.
 
 - Front End: ERB, Sass
 - Back End: Ruby on Rails
